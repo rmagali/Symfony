@@ -1,0 +1,71 @@
+{% extends "::base.html.twig" %}
+{% block body %}
+<style>
+table, th, td {
+  border: 1px solid black;
+}
+th, td {
+  padding: 10px;
+
+}
+th {
+  background-color: #4CAF50;
+  color: white;
+}
+th {
+  text-align: left;
+}
+tr:nth-child(even) {background-color: #f2f2f2;}  
+</style>
+
+{% for flash_message in app.session.flashbag.get('notice') %}
+    <div class="alert alert-success" role="alert">
+       <div class="container"> {{ flash_message }}</div>
+    </div>
+{% endfor %}
+
+<div class="container">
+
+    <h4>Registro de afiliados</h4>
+    <br>
+{% if afiliado is not empty %}
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Nombre</th>
+      <th>Apellido</th>
+      <th>DNI</th>
+      <th>Fehca de Nacimiento</th>
+      <th>Genero</th>
+      <th>Correo Electronico</th>
+          
+      <th>Eliminar</th>
+      <th>Modificar</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for afiliado in afiliado %}
+  <tr>
+    <td>{{ afiliado.id }}</td>
+    <td>{{ afiliado.nombre }}</td>
+    <td>{{ afiliado.apellido }}</td>
+    <td>{{ afiliado.dni}}</td>
+    <td>{{ afiliado.fechaNacimiento | date('d-m-Y')}}</td>
+    <td>{{ afiliado.genero}}</td>
+    <td>{{ afiliado.email}}</td>
+    
+    <td><a href="{{path('afiliado_delete', { id: afiliado.id})}}">Eliminar</a></td>
+    <td><a href="{{path('afiliado_update', { id: afiliado.id})}}">Actualizar</a></td>
+    
+  </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{% else %}
+  <p>Registro de afiliado no encontrado.</p>
+{% endif %}
+
+
+
+{% endblock %}

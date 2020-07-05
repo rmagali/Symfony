@@ -1,0 +1,8 @@
+afiliados:
+    resource: "@AfiliadosBundle/Controller/"
+    type:     annotation
+    prefix:   /accord
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation

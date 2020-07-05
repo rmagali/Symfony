@@ -1,0 +1,36 @@
+<style>
+th, td {
+padding: 10px;
+}
+th {
+text-align: right;
+}
+</style>
+<h1>Article Created or Modified</h1>
+<table>
+<tbody>
+<tr>
+<th>Nombre:</th>
+<td>{{ afiliado.nombre }}</td>
+</tr>
+<tr>
+<th>Apellido:</th>
+<td>{{ afiliado.apellido }}</td>
+</tr>
+<tr>
+<th>DNI:</th>
+<td>{{ afiliado.dni }}</td>
+</tr>
+<tr>
+<th>Genero:</th>
+<td>{{ afiliado.genero }}</td>
+</tr>
+<tr>
+<th>Email:</th>
+<td>{{ afiliado.email }}</td>
+</tr
+</tbody>
+</table>
+<br/>
+<a href="show">Ver todos</a> -
+<a href="update/afiliado/{id}">Modificar</a>

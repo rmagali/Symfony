@@ -1,0 +1,50 @@
+
+
+{% extends "::base.html.twig" %}
+
+{% block body %}
+
+    <div class="container">
+        <h4> Editar registro</h4>
+        <br>
+           
+     {{ form_start(form) }}
+{{ form_errors(form) }}
+<table>
+  <tbody>
+    <tr>
+      <th>Nombre:</th>
+      <td>{{ form_widget(form.nombre) }}</td>
+    </tr>
+    <tr>
+      <th>Apellido:</th>
+      <td>{{ form_widget(form.apellido) }}</td>
+    </tr>
+    <tr>
+      <th>DNI:</th>
+      <td>{{ form_widget(form.dni) }}</td>
+    </tr>
+    <tr>
+      <th>Fecha de nacimiento:</th>
+      <td>{{ form_widget(form.fechaNacimiento)  }}</td>
+    </tr>
+     <tr>
+      <th>Genero</th>
+      <td>{{ form_widget(form.genero) }}</td>
+    </tr>
+     <tr>
+      <th>Email</th>
+      <td>{{ form_widget(form.email) }}</td>
+    </tr>
+    
+    <tr>
+      <th>Guardar</th>
+      <td>{{ form_widget(form.enviar) }}</td>
+    </tr>
+  </tbody>
+</table>
+{{ form_rest(form) }}
+{{ form_end(form) }}
+    </div>  
+
+{% endblock %}
